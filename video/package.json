@@ -6,10 +6,10 @@
     "render": "remotion render src/index.ts CloakPipeDemo out/cloakpipe-hermes.mp4 --browser-executable=$HOME/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome"
   },
   "dependencies": {
-    "@remotion/cli": "4.0.372",
+    "@remotion/cli": "4.0.541",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "remotion": "4.0.372"
+    "remotion": "4.0.410"
   },
   "devDependencies": {
     "@types/react": "19.2.0",
