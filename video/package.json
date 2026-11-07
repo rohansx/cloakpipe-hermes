@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "preview": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts CloakPipeDemo out/cloakpipe-hermes.mp4"
+    "render": "remotion render src/index.ts CloakPipeDemo out/cloakpipe-hermes.mp4 --browser-executable=$HOME/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome"
   },
   "dependencies": {
     "@remotion/cli": "4.0.372",
