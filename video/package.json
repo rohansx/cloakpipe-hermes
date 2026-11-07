@@ -1,0 +1,18 @@
+{
+  "name": "cloakpipe-hermes-video",
+  "private": true,
+  "scripts": {
+    "preview": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts CloakPipeDemo out/cloakpipe-hermes.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.372",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.372"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.0",
+    "typescript": "5.9.3"
+  }
+}
