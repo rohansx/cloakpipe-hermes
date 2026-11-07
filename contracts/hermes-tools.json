@@ -1,0 +1,726 @@
+{
+ "hermes": "0.23.0",
+ "tools": {
+  "annotate_preview": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "browser_cdp": {
+   "toolset": "browser-cdp",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "method"
+    ]
+   }
+  },
+  "browser_dialog": {
+   "toolset": "browser-cdp",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "browser_exec": {
+   "toolset": "browser-use",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "code"
+    ]
+   }
+  },
+  "browser_vault": {
+   "toolset": "browser",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "clarify": {
+   "toolset": "clarify",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "questions"
+    ]
+   }
+  },
+  "close_terminal": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "process_id"
+    ]
+   }
+  },
+  "computer_use": {
+   "toolset": "computer_use",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "cronjob_manage": {
+   "toolset": "cronjob",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "delegate_task": {
+   "toolset": "delegation",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "desktop_preview": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "desktop_project": {
+   "toolset": "project",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "discord": {
+   "toolset": "discord",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "discord_admin": {
+   "toolset": "discord_admin",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "drive_preview": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "execute_code": {
+   "toolset": "code_execution",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "code"
+    ]
+   }
+  },
+  "feishu_doc_read": {
+   "toolset": "feishu_doc",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "doc_token"
+    ]
+   }
+  },
+  "feishu_drive_add_comment": {
+   "toolset": "feishu_drive",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "file_token",
+     "content"
+    ]
+   }
+  },
+  "feishu_drive_list_comment_replies": {
+   "toolset": "feishu_drive",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "file_token",
+     "comment_id"
+    ]
+   }
+  },
+  "feishu_drive_list_comments": {
+   "toolset": "feishu_drive",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "file_token"
+    ]
+   }
+  },
+  "feishu_drive_reply_comment": {
+   "toolset": "feishu_drive",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "file_token",
+     "comment_id",
+     "content"
+    ]
+   }
+  },
+  "focus_pane": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "pane"
+    ]
+   }
+  },
+  "gui_tour": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "image_generate": {
+   "toolset": "image_gen",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "prompt"
+    ]
+   }
+  },
+  "kanban_attach": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "filename",
+     "content_base64"
+    ]
+   }
+  },
+  "kanban_attach_url": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "url"
+    ]
+   }
+  },
+  "kanban_attachments": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "kanban_block": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "reason"
+    ]
+   }
+  },
+  "kanban_comment": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "task_id",
+     "body"
+    ]
+   }
+  },
+  "kanban_complete": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "kanban_create": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "title",
+     "assignee"
+    ]
+   }
+  },
+  "kanban_heartbeat": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "kanban_link": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "parent_id",
+     "child_id"
+    ]
+   }
+  },
+  "kanban_list": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "kanban_request_changes": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "reason"
+    ]
+   }
+  },
+  "kanban_request_review": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "summary"
+    ]
+   }
+  },
+  "kanban_schedule": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "kanban_show": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "kanban_unblock": {
+   "toolset": "kanban",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "task_id"
+    ]
+   }
+  },
+  "manage_catalog": {
+   "toolset": "catalog",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {},
+       "required": [
+        "kind",
+        "id"
+       ]
+      }
+     }
+    },
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "manage_connections": {
+   "toolset": "connections",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "memory": {
+   "toolset": "memory",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "target",
+     "operations"
+    ]
+   }
+  },
+  "patch": {
+   "toolset": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "path",
+     "old_string",
+     "new_string"
+    ]
+   }
+  },
+  "process_manage": {
+   "toolset": "terminal",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "action"
+    ]
+   }
+  },
+  "react_to_message": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "emoji"
+    ]
+   }
+  },
+  "read_file": {
+   "toolset": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "path"
+    ]
+   }
+  },
+  "read_terminal": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  },
+  "read_window_below": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  },
+  "search_files": {
+   "toolset": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "pattern"
+    ]
+   }
+  },
+  "session_search": {
+   "toolset": "session_search",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "set_theme": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  },
+  "setup_beat": {
+   "toolset": "onboarding",
+   "parameters": {
+    "type": "object",
+    "required": [
+     "beat"
+    ],
+    "properties": {}
+   }
+  },
+  "show_tip": {
+   "toolset": "desktop_ui",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "text",
+     "selector"
+    ]
+   }
+  },
+  "skill_manage": {
+   "toolset": "skills",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "operations"
+    ]
+   }
+  },
+  "skill_view": {
+   "toolset": "skills",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "name"
+    ]
+   }
+  },
+  "skills_list": {
+   "toolset": "skills",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "terminal": {
+   "toolset": "terminal",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "command"
+    ]
+   }
+  },
+  "text_to_speech": {
+   "toolset": "tts",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "text"
+    ]
+   }
+  },
+  "todo_list": {
+   "toolset": "todo",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "video_analyze": {
+   "toolset": "video",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "video_url",
+     "question"
+    ]
+   }
+  },
+  "video_generate": {
+   "toolset": "video_gen",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "prompt"
+    ]
+   }
+  },
+  "vision_analyze": {
+   "toolset": "vision",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "image_url",
+     "question"
+    ]
+   }
+  },
+  "web_extract": {
+   "toolset": "web",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "urls"
+    ]
+   }
+  },
+  "web_search": {
+   "toolset": "web",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "query"
+    ]
+   }
+  },
+  "write_file": {
+   "toolset": "file",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "path",
+     "content"
+    ]
+   }
+  },
+  "x_search": {
+   "toolset": "x_search",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "query"
+    ]
+   }
+  },
+  "xai_video_edit": {
+   "toolset": "video_gen",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "prompt",
+     "video_url"
+    ]
+   }
+  },
+  "xai_video_extend": {
+   "toolset": "video_gen",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "prompt",
+     "video_url"
+    ]
+   }
+  },
+  "yb_query_group_info": {
+   "toolset": "hermes-yuanbao",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "group_code"
+    ]
+   }
+  },
+  "yb_query_group_members": {
+   "toolset": "hermes-yuanbao",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": [
+     "group_code",
+     "action"
+    ]
+   }
+  },
+  "yb_search_sticker": {
+   "toolset": "hermes-yuanbao",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "yb_send_dm": {
+   "toolset": "hermes-yuanbao",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  },
+  "yb_send_sticker": {
+   "toolset": "hermes-yuanbao",
+   "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+   }
+  }
+ }
+}

@@ -1,0 +1,42 @@
+name: cloakpipe
+version: 0.1.0
+description: >-
+  Argument-level policy gate for every Hermes tool call. Before a tool runs, its exact arguments
+  are checked in code against a CloakPipe contract (which tools, which arguments, which values,
+  which chat or customer a message may go to). A call that breaks the contract never runs and
+  Hermes is told why; a call the contract marks as risky is held for Hermes's own approval
+  prompt and the approval is bound to that exact call; every decision and outcome lands in a
+  signed, hash-chained ledger that `cloakpipe verify` checks offline.
+  Disclosure — starts one background process on 127.0.0.1 (the CloakPipe gate, a Rust binary
+  found on PATH or at the configured path; nothing is downloaded by this plugin), talks to it
+  over localhost only, and writes its ledger, operations store, approval receipts and event log
+  under plugin-data/cloakpipe/. No network, no telemetry, no credentials.
+author: rohansx
+license: MIT
+homepage: https://cloakpipe.co
+manifest_version: 2
+requires_hermes: ">=0.23.0"
+tags: [security, guardrails, approvals, audit, prompt-injection]
+provides_hooks:
+  - pre_tool_call
+  - post_tool_call
+  - on_session_end
+config_schema:
+  binary:
+    type: str
+    description: "Path to the cloakpipe binary (default: `cloakpipe` on PATH)."
+  manifest:
+    type: str
+    description: "Contract the gate enforces (cloakpipe.manifest.yaml). Default: the plugin's contracts/hermes.manifest.yaml."
+  mode:
+    type: str
+    default: enforce
+    description: "enforce: refuse calls that break the contract. shadow: let them run and record what enforce would have done."
+  scope:
+    type: str
+    default: declared
+    description: "declared: only tools the contract names go through the gate. all: a tool the contract does not name is refused (undeclared_tool)."
+  decide_timeout:
+    type: float
+    default: 10.0
+    description: "Seconds to wait for the gate's decision. Past it the call is refused (fail closed)."

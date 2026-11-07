@@ -1,0 +1,57 @@
+# The starter contract for Hermes's built-in tools. Closed by default: a tool
+# not listed here is refused (scope: all) or passed through ungated (scope:
+# declared, the default), and an argument not listed under its tool is refused
+# as undeclared_argument. Argument names are Hermes's own tool schemas.
+#
+# Deny rules that need a pattern inside a value (curl | sh, credential files)
+# live in hermes.cedar; a call must pass both.
+release: hermes
+version: "0.1"
+policy: hermes.cedar
+tools:
+  terminal:
+    args:
+      command: { type: string, min_len: 1, max_len: 8000, required: true }
+      background: { type: boolean }
+      pty: { type: boolean }
+      timeout: { type: integer, min: 0 }
+      workdir: { type: string, max_len: 1000 }
+      notify: { type: boolean }
+      heartbeat: { type: integer, min: 0 }
+      persist_on_release: { type: boolean }
+  process_manage:
+    args:
+      action: { type: string, enum: [list, poll, log, wait, kill, write, submit, close, handoff], required: true }
+      session_id: { type: string, max_len: 200 }
+      data: { type: string, max_len: 8000 }
+      timeout: { type: integer, min: 0 }
+      offset: { type: integer, min: 0 }
+      limit: { type: integer, min: 0 }
+  read_file:
+    args:
+      path: { type: string, min_len: 1, max_len: 1000, required: true }
+      offset: { type: integer, min: 1 }
+      limit: { type: integer, min: 1, max: 2000 }
+  write_file:
+    args:
+      path: { type: string, min_len: 1, max_len: 1000, required: true }
+      content: { type: string, required: true }
+    effect: write
+    idempotency_key: "{path}:{sha256(content)}"
+  patch:
+    args:
+      path: { type: string, min_len: 1, max_len: 1000, required: true }
+      old_string: { type: string, required: true }
+      new_string: { type: string, required: true }
+      replace_all: { type: boolean }
+    effect: write
+    idempotency_key: "{path}:{sha256(old_string)}:{sha256(new_string)}"
+  execute_code:
+    args:
+      code: { type: string, required: true }
+      reset: { type: boolean }
+    effect: write
+    # Arbitrary code: a human taps approve on this exact script.
+    approval:
+      approvers: ["hermes:owner"]
+      ttl: 15m

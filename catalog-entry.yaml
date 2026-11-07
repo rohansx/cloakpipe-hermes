@@ -1,0 +1,27 @@
+# The catalog entry to add as plugin-catalog/cloakpipe.yaml in NousResearch/hermes-agent.
+# Pin `sha` to the exact commit of this repository being submitted and keep `version`
+# equal to plugin.yaml's.
+name: cloakpipe
+repo: https://github.com/rohansx/cloakpipe-hermes
+sha: 0000000000000000000000000000000000000000
+description: >-
+  Argument-level policy gate for every Hermes tool call: a contract says which tools, which
+  arguments and which values are allowed; code checks each call before it runs, holds risky
+  calls for Hermes's approval prompt bound to that exact call, and writes every decision to a
+  signed, hash-chained ledger that verifies offline. Disclosure — starts the CloakPipe gate
+  (a Rust binary already on PATH; nothing is downloaded) as a background process on 127.0.0.1
+  with a bearer token, runs it as a subprocess for approvals and ledger export, and writes its
+  ledger, operations store, approval receipts and event log (including the arguments of refused
+  and held calls) under plugin-data/cloakpipe/; no network beyond localhost, no telemetry, no
+  credentials; fails closed when the gate is unavailable.
+maintainer: rohansx
+tier: community
+category: tools
+requires_hermes: ">=0.23"
+docs_url: https://cloakpipe.co
+version: "0.1.0"
+capabilities:
+  provides_tools: []
+  provides_hooks: [pre_tool_call, post_tool_call, on_session_end]
+  provides_middleware: []
+  requires_env: []
